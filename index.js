@@ -12,3 +12,10 @@ const formatFullName =(firstName="", lastName="") =>{
     }
 }
 
+const calculateTotalCost =(price, quantity, taxRate) =>{
+    if (typeof price != "number" || typeof quantity != "number" || typeof taxRate != "number"){
+        return "Invalid input"
+    } else{
+        return (price * quantity) * (1 + taxRate)
+    }
+}
