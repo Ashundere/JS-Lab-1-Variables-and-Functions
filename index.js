@@ -12,13 +12,14 @@ const formatFullName =(firstName="", lastName="") =>{
     }
 }
 
-const calculateTotalCost =(price, quantity, taxRate) =>{
-    if (typeof price != "number" || typeof quantity != "number" || typeof taxRate != "number"){
-        return "Invalid input"
-    } else{
-        return (price * quantity) * (1 + taxRate)
-    }
-}
+// const calculateTotalCost =(price, quantity, taxRate) =>{
+//     if (typeof price != "number" || typeof quantity != "number" || typeof taxRate != "number"){
+//         return "Invalid input"
+//     } else{
+//         return (price * quantity) * (1 + taxRate)
+//     }
+// }
+//Kept this function here as proof that I did Task 2!
 
 const checkEligibility = (age, isEmployed) =>{
     if(age > 18 && isEmployed== true){
@@ -27,5 +28,15 @@ const checkEligibility = (age, isEmployed) =>{
         return "You are Conditionally Eligible!"
     } else{
         return "You are Not Eligible."
+    }
+}
+
+const calculateTotalCost =(price, quantity, taxRate, discount) =>{
+    if (typeof price != "number" || typeof quantity != "number" || typeof taxRate != "number"){
+        return "Invalid input"
+    } else if(discount == undefined){
+        return (price * quantity) * (1 + taxRate)
+    } else{
+        return ((price * quantity) - discount) * (1+taxRate)
     }
 }
