@@ -19,3 +19,13 @@ const calculateTotalCost =(price, quantity, taxRate) =>{
         return (price * quantity) * (1 + taxRate)
     }
 }
+
+const checkEligibility = (age, isEmployed) =>{
+    if(age > 18 && isEmployed== true){
+        return "You are Eligible!"
+    } else if(age > 18 && isEmployed == false){
+        return "You are Conditionally Eligible!"
+    } else{
+        return "You are Not Eligible."
+    }
+}
